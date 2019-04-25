@@ -33,8 +33,8 @@ public class BeritaInteractorImpl implements MainActivityContract.Interactor {
 
     @Override
     public void loadData(Integer page, String country, String apikey, String category, javax.security.auth.callback.Callback callback) {
-        Call<BeritaResponse> peneranganJalanResponseCall = apiInterface.listberita(page, country, category, apikey);
-        peneranganJalanResponseCall.enqueue(new Callback<BeritaResponse>() {
+        Call<BeritaResponse> BeritaResponseCall = apiInterface.listberita(page, country, category, apikey);
+        BeritaResponseCall.enqueue(new Callback<BeritaResponse>() {
             @Override
             public void onResponse(Call<BeritaResponse> call, Response<BeritaResponse> response) {
                 assert response.body() != null;
@@ -58,8 +58,8 @@ public class BeritaInteractorImpl implements MainActivityContract.Interactor {
 
     @Override
     public void loadDataSlider(String country, String apikey, String category, javax.security.auth.callback.Callback callback) {
-        Call<BeritaResponse> peneranganJalanResponseCall = apiInterface.listberita(null, country, category, apikey);
-        peneranganJalanResponseCall.enqueue(new Callback<BeritaResponse>() {
+        Call<BeritaResponse> BeritaResponseCall = apiInterface.listberita(null, country, category, apikey);
+        BeritaResponseCall.enqueue(new Callback<BeritaResponse>() {
             @Override
             public void onResponse(Call<BeritaResponse> call, Response<BeritaResponse> response) {
                 assert response.body() != null;
