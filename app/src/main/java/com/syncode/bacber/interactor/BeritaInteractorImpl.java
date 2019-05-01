@@ -67,6 +67,8 @@ public class BeritaInteractorImpl implements MainActivityContract.Interactor {
                     List<Berita> beritas = response.body().getBeritaList();
                     listslider.addAll(beritas);
                     callback.equals(listslider);
+                    callback.equals(responcode);
+
                 }
             }
 
